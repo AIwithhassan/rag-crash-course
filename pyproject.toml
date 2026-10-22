@@ -1,0 +1,27 @@
+[project]
+name = "rag-crash-course"
+version = "0.1.0"
+description = "A step-by-step RAG crash course: basic, hybrid, rewriting, re-ranking, filters, agentic"
+readme = "README.md"
+authors = [
+    { email = "hassan.mahmood@meinestadt.de" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "actian-vectorai-client==1.0.3",
+    "openai>=3.35.1",
+    "python-dotenv>=1.2.4",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=6.1.0",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic"]
+gemini = ["google-genai"]
+
+[project.scripts]
+rag-crash-course = "rag_crash_course:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
